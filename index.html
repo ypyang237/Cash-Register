@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<table border="1">
+
+<!-- <form action="demo_form.asp" id="usrform">
+  <input type="text" name="usrname">
+</form> -->
+<h1>Cash Register</h1>
+
+<br>
+<textarea rows="1" cols="23" name="comment" form="usrform">
+Enter text here...</textarea>
+<td colspan=4 id="display">0</td>
+<tr>
+<td><button id="7">7</button></td>
+<td><button id = 8 onclick="myFunction()">8</button></td>
+<td><button id = 9 onclick="myFunction()">9</button></td>
+<td class = 'operator'><button id = divide onclick="myFunction()">/</button></td>
+<td class = 'mainFunc'><button id = clear onclick="myFunction()">Clear</button></td>
+</tr>
+<tr>
+<td><button id = 4 onclick="myFunction()">4</button></td>
+<td><button id = 5 onclick="myFunction()">5</button></td>
+<td><button id = 6 onclick="myFunction()">6</button></td>
+<td class = 'operator'><button id = multiply onclick="myFunction()">*</button></td>
+<td class = 'mainFunc'><button id = myBalance onclick="myFunction()">Get Balance</button></td>
+</tr>
+<tr>
+<td><button id = 1 onclick="myFunction()">1</button></td>
+<td><button id = 2 onclick="myFunction()">2</button></td>
+<td><button id = 3 onclick="myFunction()">3</button></td>
+<td class = 'operator'><button id = subtract onclick="myFunction()">-</button></td>
+<td class = 'mainFunc'><button id = myDepo onclick="myFunction()">Deposit Cash</button></td>
+</tr>
+<tr>
+<td><button id = 0 onclick="myFunction()">0</button></td>
+<td><button id = 00 onclick="myFunction()">00</button></td>
+<td ><button id = decimal onclick="myFunction()">.</button></td>
+<td class = 'operator'><button id = add onclick="myFunction()">+</button></td>
+<td class = 'mainFunc'><button id = myWithdraw onclick="myFunction()">Withdraw Cash</button></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="eval"><button id = equal onclick="myFunction()">=</button></span></td>
+</tr>
+
+
+
+
+</table>
+
+<h2 id="testing123">HELLO</h2>
+
+
+
+<script type="text/javascript" src="./js/calculator.js"></script>
+<script type="text/javascript" src="./js/cash_register.js"></script>
+<script>
+
+</script>
+
+</body>
+</html>

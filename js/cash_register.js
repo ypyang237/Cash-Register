@@ -1,85 +1,174 @@
-var registerModule = function () {
 
-var display = 0;
+var cashRegisterModule =function () {
 
 
-  var setDisplay = function(x) {
-  //change html inside to x
-  display = display + x;
-  return display;
-  };
+
+var myCalc = calculatorModule;
+var operatorClick = false;
+var tempMem = 0;
+var currNum = 0;
+var operatorCount = 0;
+
 
   var clearDisplay = function() {
     //set display to 0
-    display = 0;
-    return display;
+    document.getElementById('display').innerHTML = "";
+
   };
+
 
   var getBalance = function() {
+
     // get from memory & set display to memory's value
-    recallMemory();//will return memory
-    memory = x;
-    return x;
+
+    var mem = myCalc.recallMemory();//will return memory
+    return mem; //right now i set mem to 2
 
   };
 
-  var getDisplay = function() {
-    // get whatever is currently on display
-    return display;
+
+  var cashDepo = function(mem) {
+//will update memory value
+    /*1. get number from display  setTotal
+    2. add it to recallMemory   +recallMemory*/
+    var getSet = myCalc.load(x); // NOT DONE YET right now i set x to 3, it should be whatever is entered on calc
+    var newMem = getSet + getBalance(mem);
+    return newMem;
+  };
+
+
+  var takeMoney = function(mem) {
+    var getSet = myCalc.load(x);
+    var leftMon = getBalance(mem) - getSet;
+
+    return leftMon;
   };
 
 
 
-};
 
 
-for (i = 0; i < 9; i ++){
-document.getElementById(i).onclick = setI;
-document.getElementById('display').innerHTML = i;
 
 
-var x = document.getElementById('display');
-x.innerHTML = i;
+
+var btnBox = document.getElementById('btnBox');
+//MAKING NUM BUTTONS WORK
+for (i = 0; i < 10; i ++) {
+
+  var btn = document.getElementById(i);
+  btn.onclick = function(){
+    //document.getElementById('display').innerHTML = 0;
+
+
+
+      //x = myCalc.load(tempMem); //_total is 5;
+      //myCalc.saveMemory();
+      //x = myCalc.load(tempMem);
+
+    //console.log(typeof Number(this.id)); --number of whatever button gets clicked
+
+    //hey = Number(this.id);  -- this does not record second digit
+
+    //console.log(hey);
+
+
+
+    if (operatorClick){
+      tempMem = this.id;
+      operatorClick = false;
+      //SOME SORT OF OPERATOR FUNCTION HERE!
+    } else{
+      _memory = document.getElementById('display').innerHTML + this.id;
+    }
+    console.log(_memory, hey);
+    document.getElementById('display').innerHTML = _memory;
+
+    //console.log(Number(tempMem), typeof tempMem);
+    _memory = Number(_memory);
+    myCalc.load(_memory);
+    //console.log(myCalc.load(tempMem));
+
+
+  };
 
 
 }
 
-document.getElementById(i).onclick = setI;
-document.getElementById('display').innerHTML = i;
+
+
+//CLEAR BUTTON
+var clearBtn = document.getElementById('clear');
+    clearBtn.onclick = function(){
+      document.getElementById('display').innerHTML = clearDisplay();
+    };
+
+
+//GET BALANCE BUTTON
+var balanceBtn = document.getElementById('myBalance');
+    balanceBtn.onclick = function(){
+      document.getElementById('display').innerHTML = getBalance();
+    };
+
+//DEPOSIT CASH BUTTON
+var depoBtn = document.getElementById('myDepo');
+    depoBtn.onclick = function() {
+      document.getElementById('display').innerHTML = cashDepo();
+    };
+
+//WITHDRAW BUTTON
+var wthdrwBtn = document.getElementById('myWithdraw');
+    wthdrwBtn.onclick = function() {
+      document.getElementById('display').innerHTML = takeMoney();
+    };
+
+//ADD BUTTON
+var addBtn = document.getElementById('add');
+    addBtn.onclick = function() {
+
+
+      operatorCount += 1;
+      console.log(operatorCount);
+
+      var newTotal = myCalc.add(myCalc.recallMemory());
+      document.getElementById('display').innerHTML = newTotal;
+
+      if(operatorCount > 1){
 
 
 
+      /*var newTotal = myCalc.add(myCalc.recallMemory());
+      document.getElementById('display').innerHTML = newTotal;
+      console.log(newTotal);*/
+      operatorClick = true;
 
-/*document.getElementById(1).onclick = function() {
-  document.getElementById('display').innerHTML = 1;
-};
-document.getElementById(2).onclick = function() {
-  document.getElementById('display').innerHTML = 2;
-};
-document.getElementById(3).onclick = function() {
-  document.getElementById('display').innerHTML = 3;
-};
-document.getElementById(4).onclick = function() {
-  document.getElementById('display').innerHTML = 4;
-};
-document.getElementById(5).onclick = function() {
-  document.getElementById('display').innerHTML = 5;
-};
-document.getElementById(6).onclick = function() {
-  document.getElementById('display').innerHTML = 6;
-};
-document.getElementById(7).onclick = function() {
-  document.getElementById('display').innerHTML = 7;
-};
-document.getElementById(8).onclick = function() {
-  document.getElementById('display').innerHTML = 8;
-};
-document.getElementById(9).onclick = function() {
-  document.getElementById('display').innerHTML = 9;
-};
-document.getElementById(0).onclick = function() {
-  document.getElementById('display').innerHTML = 0;
-};
-*/
+          };
 
+//SUBTRACT BUTTON
+var subBtn = document.getElementById('subtract');
+    subBtn.onclick = function() {
+      document.getElementById('display').innerHTML = '-';
+    };
 
+//MULTIPLY BUTTON
+var multBtn = document.getElementById('multiply');
+    multBtn.onclick = function() {
+      document.getElementById('display').innerHTML = 'x';
+    };
+
+//DIVIDE BUTTON
+var divBtn = document.getElementById('divide');
+    divBtn.onclick = function() {
+      document.getElementById('display').innerHTML = '/';
+    };
+
+//EQUAL BUTTON
+var equalBtn = document.getElementById('equal');
+    equalBtn.onclick = function() {
+      document.getElementById('display').innerHTML = '=';
+    };
+
+  };
+
+};
+
+ cashRegisterModule();

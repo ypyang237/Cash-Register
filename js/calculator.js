@@ -5,10 +5,7 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
-
-
 var calculatorModule = function() {
-
 // private variables
   var _total = 0;
   var _memory = 0;
@@ -20,7 +17,7 @@ var calculatorModule = function() {
    * @param  { Number } x
    * @return { Number }    current total
    */
-  function setTotal(x){
+  function load(x){
      if (typeof x !== "number"){
         throw Error("not a number");
    }
@@ -95,7 +92,7 @@ var calculatorModule = function() {
    * @return { Number }
    */
    function recallMemory(){
-    return _memory;
+    return _memory;//alert("heyyo");
    }
 
   /**
@@ -103,7 +100,7 @@ var calculatorModule = function() {
    */
    function saveMemory(){
     _memory = _total;
-    return  _memory;
+    return  memory;
    }
 
   /**
@@ -124,7 +121,7 @@ var calculatorModule = function() {
 return {
 
   //public
-    load: setTotal,
+    load: load,
     getTotal: getTotal,
     add: add,
     subtract: subtract,
@@ -137,12 +134,15 @@ return {
 
    };
 
+}();
+
+
+
 
 
 // var calculator = {};
 
 // return calculator;
 
- };
 
 

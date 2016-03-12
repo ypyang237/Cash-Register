@@ -60,33 +60,18 @@ for (i = 0; i < 10; i ++) {
     //document.getElementById('display').innerHTML = 0;
 
 
-
-      //x = myCalc.load(tempMem); //_total is 5;
-      //myCalc.saveMemory();
-      //x = myCalc.load(tempMem);
-
-    //console.log(typeof Number(this.id)); --number of whatever button gets clicked
-
-    //hey = Number(this.id);  -- this does not record second digit
-
-    //console.log(hey);
-
-
-
     if (operatorClick){
       tempMem = this.id;
       operatorClick = false;
-      //SOME SORT OF OPERATOR FUNCTION HERE!
     } else{
-      _memory = document.getElementById('display').innerHTML + this.id;
+      tempMem = document.getElementById('display').innerHTML + this.id;
     }
-    console.log(_memory, hey);
-    document.getElementById('display').innerHTML = _memory;
+
+    document.getElementById('display').innerHTML = tempMem;
 
     //console.log(Number(tempMem), typeof tempMem);
-    _memory = Number(_memory);
-    myCalc.load(_memory);
-    //console.log(myCalc.load(tempMem));
+    tempMem = Number(tempMem);
+    myCalc.load(tempMem);
 
 
   };
@@ -124,16 +109,18 @@ var wthdrwBtn = document.getElementById('myWithdraw');
 //ADD BUTTON
 var addBtn = document.getElementById('add');
     addBtn.onclick = function() {
-
+      //x = myCalc.load(tempMem); //_total is 5;
+      //myCalc.saveMemory();
+      //x = myCalc.load(tempMem);
 
       operatorCount += 1;
       console.log(operatorCount);
-
       var newTotal = myCalc.add(myCalc.recallMemory());
       document.getElementById('display').innerHTML = newTotal;
-
       if(operatorCount > 1){
 
+      console.log(newTotal);
+      }
 
 
       /*var newTotal = myCalc.add(myCalc.recallMemory());
@@ -169,6 +156,5 @@ var equalBtn = document.getElementById('equal');
 
   };
 
-};
 
  cashRegisterModule();

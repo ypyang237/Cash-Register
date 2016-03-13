@@ -44,6 +44,12 @@ var operatorCount = 0;
     return leftMon;
   };
 
+/*
+  var previousNum = function() {
+    var tempMem =
+
+  };
+*/
 
 
 
@@ -62,16 +68,21 @@ for (i = 0; i < 10; i ++) {
 
     if (operatorClick){
       tempMem = this.id;
+      console.log(tempMem, 'this.id');
       operatorClick = false;
     } else{
       tempMem = document.getElementById('display').innerHTML + this.id;
+      console.log(tempMem, 'document.getElementById(display).innerHTML+this.id');
     }
 
-    document.getElementById('display').innerHTML = tempMem;
+    document.getElementById('display').innerHTML = tempMem; // displays the number
+    console.log(tempMem, 'getElementById(display)');
 
-    //console.log(Number(tempMem), typeof tempMem);
-    tempMem = Number(tempMem);
+
+    tempMem = Number(tempMem);  //'numberize it'
+
     myCalc.load(tempMem);
+    console.log(tempMem, 'load function');
 
 
   };

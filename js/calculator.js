@@ -12,6 +12,7 @@ var calculatorModule = function() {
 
 
 
+
 /**
    * sets the `total` to the number passed in
    * @param  { Number } x

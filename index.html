@@ -10,39 +10,40 @@
 <!-- <form action="demo_form.asp" id="usrform">
   <input type="text" name="usrname">
 </form> -->
-<h1>Cash Register</h1>
 
+<h1>Pam's Cash Register</h1>
 <br>
 <textarea rows="1" cols="23" name="comment" form="usrform">
-Enter text here...</textarea>
-<td colspan=4 id="display"></td>
+Memo: </textarea>
+<br>
+<td colspan=4 rows = "2" id="display" height = "20px"></td>
 <tr>
 <div id = "btnBox">
 <td><button id="7">7</button></td>
 <td><button id = 8>8</button></td>
 <td><button id = 9>9</button></td>
 <td><button id = divide>/</button></td>
-<td><button id = "clear">Clear</button></td>
+<td><button id = clear>Clear</button></td>
 </tr>
 <tr>
 <td><button id = 4>4</button></td>
 <td><button id = 5>5</button></td>
 <td><button id = 6>6</button></td>
-<td><button id = multiply>X</button></td>
+<td><button id = X>X</button></td>
 <td><button id = myBalance>Get Balance</button></td>
 </tr>
 <tr>
 <td><button id = 1>1</button></td>
 <td><button id = 2>2</button></td>
 <td><button id = 3>3</button></td>
-<td><button id = subtract>-</button></td>
+<td><button id = ->-</button></td>
 <td><button id = myDepo>Deposit Cash</button></td>
 </tr>
 <tr>
 <td><button id = 0>0</button></td>
 <td><button id = 00>00</button></td>
 <td><button id = decimal>.</button></td>
-<td><button id = add>+</button></td>
+<td><button id = +>+</button></td>
 <td><button id = myWithdraw>Withdraw Cash</button></td>
 </tr>
 
@@ -50,7 +51,7 @@ Enter text here...</textarea>
 <td></td>
 <td></td>
 <td></td>
-<td><button id = equal>=</button></td>
+<td><button id = =>=</button></td>
 </tr>
 </div>
 
@@ -58,12 +59,13 @@ Enter text here...</textarea>
 
 </table>
 
-<h2 id="testing123">HELLO</h2>
 
 
 
+<script type="text/javascript" src="./clickBtns.js"></script>
 <script type="text/javascript" src="./js/calculator.js"></script>
 <script type="text/javascript" src="./js/cash_register.js"></script>
+
 
 
 </body>
